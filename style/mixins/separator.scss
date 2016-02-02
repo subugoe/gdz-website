@@ -1,0 +1,20 @@
+@mixin separator($top, $right, $bottom: $top, $left: $right) {
+	$shadows: ();
+	@if $top > 0 {
+		border-top: 1px solid rgba(#fff, .1);
+		$shadows: append($shadows, 0 -1px 0 rgba(#000, .1), 'comma');
+	}
+	@if $right > 0 {
+		border-right: 1px solid rgba(#000, .1);
+		$shadows: append($shadows, 1px 0 0 rgba(#fff, .1), 'comma');
+	}
+	@if $bottom > 0 {
+		border-bottom: 1px solid rgba(#000, .1);
+		$shadows: append($shadows, 0 1px 0 rgba(#fff, .1), 'comma');
+	}
+	@if $left > 0 {
+		border-left: 1px solid rgba(#fff, .1);
+		$shadows: append($shadows, -1px 0 0 rgba(#000, .1), 'comma');
+	}
+	box-shadow: $shadows;
+}

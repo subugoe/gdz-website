@@ -1,0 +1,32 @@
+.content {
+	flex: 1;
+}
+
+.content_header {
+	background: $header-bg;
+	box-shadow: 0 1px 0 rgba(#fff, .2) inset, 0 -1px 0 rgba(#000, .1) inset;
+	margin: 0 auto;
+	padding: ($v / 2) ($h / 4);
+	text-align: center;
+
+	&.-small {
+		display: flex;
+		margin: 0;
+		max-width: none;
+		padding: ($v / 2) 0;
+		text-align: left;
+
+		@include respond-to(tiny) {
+			display: block;
+		}
+	}
+}
+
+.content_logo {
+	flex: 1;
+	margin: 0 .5em;
+}
+
+.content_search {
+	flex: 99;
+}

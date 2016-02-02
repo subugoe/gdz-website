@@ -1,0 +1,32 @@
+@mixin button($modifier: null) {
+	@include hover-transition(background);
+	font: inherit;
+	min-height: $v;
+	min-width: round($h * 1.2);
+	margin: round(-$v / 8) 0;
+	padding: round($v / 8) .5em;
+	text-align: center;
+	vertical-align: middle;
+
+	@if $modifier == light {
+		background: $button-light-bg;
+		border: $button-light-border;
+		color: $button-light-text-color;
+		text-shadow: 0 1px 0 rgba(#fff, .8);
+	} @else {
+		background: $button-bg;
+		border: $button-border;
+		color: $button-text-color;
+		text-shadow: 0 -1px 0 rgba(#000, .8);
+	}
+
+	@include hover {
+		@if $modifier == light {
+			background: $button-light-hover-bg;
+			color: $button-light-text-color;
+		} @else {
+			background: $button-hover-bg;
+			color: $button-text-color;
+		}
+	}
+}

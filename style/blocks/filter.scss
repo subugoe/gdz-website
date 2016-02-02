@@ -1,0 +1,10 @@
+.filter {
+	& + & {
+		margin-top: $v;
+	}
+}
+
+.filter_count {
+	font-size: $font-size-small;
+	color: $text-color-light;
+}

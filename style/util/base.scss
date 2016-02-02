@@ -1,0 +1,99 @@
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	box-sizing: border-box;
+	overflow-y: scroll;
+}
+
+body {
+	color: $text-color;
+	display: flex;
+	flex-direction: column;
+	font-size: $font-size;
+	line-height: $line-height;
+	margin: 0 auto;
+	min-height: 100vh;
+}
+
+h1 {
+	font-size: $v; // TODO
+	font-weight: normal;
+	margin: 0 0 ($v / 4);
+}
+
+h2 {
+	font-size: 1em;
+	font-weight: bold;
+	margin: 0 0 ($v / 4);
+}
+
+ol,
+ul {
+	list-style: none inside;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	@include hover-transition(color);
+	color: $link-color;
+	text-decoration: none;
+
+	@include hover {
+		color: $link-hover-color;
+	}
+}
+
+button,
+label {
+	cursor: pointer;
+}
+
+textarea,
+button,
+input,
+select {
+	border-radius: $br;
+
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+}
+
+button {
+	@include button;
+}
+
+input,
+select,
+textarea {
+	@include input;
+}
+
+select {
+	height: round($line-height + $v / 4 + $border-width) // TODO: WAT?;
+}
+
+[type=checkbox],
+[type=radio] {
+	margin-right: .25em;
+	vertical-align: middle;
+}
+
+dt {
+	color: $text-color-light;
+	font-size: $font-size-small;
+	letter-spacing: .05em;
+	text-transform: uppercase;
+}
+
+dd + dt {
+	margin-top: ($v / 2);
+}

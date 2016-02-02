@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+
+@@include('partials/html-head.html', {
+	"title": "Viewer - GDZ Demo"
+})
+
+<body class="site">
+	@@include('partials/header.html')
+	<div class="content">
+		<div class="content_header -small">
+			<span class="content_logo"><a href="">GDZ</a></span>
+			<span class="content_search">
+				@@include('partials/search.html')
+			</span>
+		</div>
+		<main class="main">
+			<section class="main_content">
+				@@include('partials/viewer.html')
+			</section>
+			<aside class="main_aside">
+				@@include('partials/metadata.html')
+			</aside>
+		</main>
+	</div>
+	@@include('partials/footer.html')
+</body>
+
+</html>

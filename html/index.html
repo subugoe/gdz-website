@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+
+@@include('partials/html-head.html', {
+	"title": "GDZ Demo"
+})
+
+<body>
+	@@include('partials/header.html')
+	<div class="content">
+		<div class="content_header">
+			@@include('partials/banner.html')
+			<form action="" class="search -center">
+				<label for="search" class="sr-only">Suchbegriffe</label>
+				<input id="search" type="text" class="search_input" value="Gott">
+				<button class="search_submit">
+					Suchen
+				</button>
+			</form>
+		</div>
+		<main class="main">
+			<section class="main_column">
+				@@include('partials/fields.html')
+			</section>
+			<aside class="main_column">
+				@@include('partials/projects.html')
+			</aside>
+		</main>
+	</div>
+	@@include('partials/footer.html')
+</body>
+
+</html>

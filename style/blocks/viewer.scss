@@ -1,0 +1,45 @@
+.viewer_controls {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.viewer_control {
+	@include button(light);
+	border-radius: 0;
+	float: left;
+
+	& + & {
+		@include separator(0, 0, 0, 1);
+	}
+
+	&:first-child {
+		border-top-left-radius: $br;
+		border-bottom-left-radius: $br;
+	}
+
+	&:last-child {
+		border-top-right-radius: $br;
+		border-bottom-right-radius: $br;
+	}
+}
+
+.viewer_group {
+	margin: 0 ($h / 2) ($v / 2) 0;
+}
+
+.viewer_overlay {
+	position: absolute;
+	top: 0;
+}
+
+.viewer_scan {
+	background: $text-color;
+	border: $border;
+	border-radius: $br;
+	overflow: hidden;
+	position: relative;
+
+	img {
+		display: block;
+	}
+}

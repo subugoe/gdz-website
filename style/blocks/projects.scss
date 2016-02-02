@@ -1,0 +1,16 @@
+.projects_row {
+	display: flex;
+
+	@include respond-to(small) {
+		display: block;
+	}
+}
+
+.projects_block {
+	margin-bottom: $v;
+	flex: 1;
+
+	& + & {
+		margin-left: $h;
+	}
+}

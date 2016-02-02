@@ -1,0 +1,35 @@
+.header {
+	background: $alpha-color;
+}
+
+.header_items {
+	@include separator(0, 1);
+	display: inline-block;
+}
+
+.header_item {
+	display: inline-block;
+
+	& + & {
+		@include separator(0, 0, 0, 1);
+	}
+}
+
+.header_link {
+	@include hover-transition(background);
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	padding: round($v / 4) 1em;
+
+	@include hover {
+		background: $button-hover-bg;
+		color: #fff;
+	}
+}
+
+.header_logo {
+	color: grey;
+	float: left;
+	padding: round($v / 4) .5em;
+}

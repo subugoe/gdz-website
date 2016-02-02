@@ -1,0 +1,27 @@
+.main {
+	display: flex;
+	padding: $v $h;
+
+	@include respond-to(small) {
+		padding: ($v / 2) ($h / 2);
+	}
+
+	@include respond-to(medium) {
+		display: block;
+	}
+}
+
+.main_column {
+	flex: 1;
+	margin-bottom: $v;
+}
+
+.main_content {
+	flex: 3;
+	margin-bottom: $v;
+}
+
+.main_aside {
+	flex: 1;
+	margin: 0 0 $v $h;
+}

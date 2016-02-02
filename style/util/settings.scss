@@ -1,0 +1,50 @@
+// Colors
+$alpha-color: #1a3771;
+$beta-color: #eee;
+
+$text-color: #444;
+$text-color-light: tint($text-color, 30);
+
+$border-color: #bbb;
+
+$header-bg: #eee;
+
+$highlight-bg: tint($alpha-color, 20);
+$highlight-bg-light: tint($alpha-color, 80);
+$highlight-text-color: #fff;
+
+$link-color: $alpha-color;
+$link-hover-color: shade($alpha-color, 40);
+
+$input-bg: #fff;
+$input-border-color: #bbb;
+$input-focus-border-color: $alpha-color;
+
+$button-text-color: #fff;
+$button-bg: linear-gradient(to bottom, tint($alpha-color, 10), shade($alpha-color, 10));
+$button-hover-bg: linear-gradient(to bottom, shade($alpha-color, 10), shade($alpha-color, 30));
+
+$button-light-text-color: $text-color;
+$button-light-bg: linear-gradient(to bottom, tint($beta-color, 10), shade($beta-color, 10));
+$button-light-hover-bg: linear-gradient(to bottom, tint($beta-color, 30), tint($beta-color, 10));
+
+// Dimensions
+$h: 28px; // horizontal grid
+$v: 26px; // vertical grid
+
+$br: 3px; // border radius
+
+$font-size: 16px;
+$font-size-small: 13px;
+$line-height: $v;
+
+$border-width: 1px;
+$input-border-width: 1px;
+
+// Combined values
+$border: 1px solid $border-color;
+$button-border: 1px solid $link-color;
+$button-light-border: 1px solid #ccc;
+
+$border-shadow: 0 0 1px rgba(#000, .5);
+$drop-shadow: 0 0 20px rgba(#000, .2);

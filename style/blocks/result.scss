@@ -1,0 +1,29 @@
+.result {
+	display: flex;
+
+	& + & {
+		border-top: $border;
+		margin-top: $v / 2 - $border-width;
+		padding-top: $h / 2;
+	}
+}
+
+
+.result_content {
+	margin-left: $h;
+}
+
+.result_highlight {
+	background: $highlight-bg-light;
+}
+
+.result_image {
+	height: $v * 4;
+	width: $h * 3;
+
+	img {
+		box-shadow: $border-shadow;
+		max-height: 100%;
+		max-width: 100%;
+	}
+}

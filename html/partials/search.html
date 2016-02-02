@@ -1,0 +1,28 @@
+<form action="" class="search">
+	<div class="search_main">
+		<label for="search" class="sr-only">Suchbegriffe</label>
+		<input id="search" type="text" class="search_input" value="Gott">
+		<button class="search_submit">
+			Suchen
+		</button>
+	</div>
+
+	<div class="search_control">
+		<p class="search_text">Suchen in</p>
+		<ul class="search_list">
+			<li class="search_item">
+				<input id="search-fulltext" type="checkbox" name="area" checked>
+				<label for="search-fulltext">Volltext</label>
+			</li>
+			<li class="search_item">
+				<input id="search-metadata" type="checkbox" name="area" checked>
+				<label for="search-metadata">Metadaten</label>
+			</li>
+		</ul>
+	</div>
+
+	<div class="search_control">
+		<input type="checkbox" id="highlight-search-term" name="highlight-search-term" checked>
+		<label for="highlight-search-term">Suchbegriff hervorheben</label>
+	</div>
+</form>
