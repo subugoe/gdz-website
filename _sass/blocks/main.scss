@@ -1,10 +1,10 @@
 .main {
 	display: flex;
 	max-width: none;
-	padding: 0 $h;
+	padding: 0 $grid;
 
 	@include respond-to(small) {
-		padding: ($v / 2) ($h / 2);
+		padding: ($grid / 2);
 	}
 
 	@include respond-to(medium) {
@@ -15,23 +15,22 @@
 	&:-moz-full-screen {
 		width: 90%;
 	}
-}
 
-.main_column {
-	flex: 1;
-	margin-bottom: $v;
-
-	& + & {
-		margin-left: $h;
+	.site.-fixed & {
+		flex: 1;
+		overflow: hidden;
+		padding: 0;
+		position: relative;
+		width: 100%;
 	}
 }
 
 .main_content {
 	flex: 3;
-	margin-bottom: $v;
+	margin-bottom: $grid;
 }
 
 .main_aside {
 	flex: 1;
-	margin: 0 0 $v $h;
+	margin: 0 0 $grid $grid;
 }

@@ -11,7 +11,7 @@
 		border-radius: $br;
 		box-shadow: 1px 1px 1px rgba(#000, .5) inset;
 		cursor: pointer;
-		height: ($v / 4);
+		height: ($grid / 4);
 		width: 100%;
 	}
 	&::-webkit-slider-runnable-track {
@@ -19,23 +19,23 @@
 		border-radius: $br;
 		box-shadow: 1px 1px 1px rgba(#000, .5) inset;
 		cursor: pointer;
-		height: ($v / 4);
+		height: ($grid / 4);
 		width: 100%;
 	}
 	&::-moz-range-thumb {
-		background: $button-light-bg;
+		background: $button-light-text-color;
 		border-radius: $br;
 		cursor: pointer;
-		height: $v;
-		width: ($h / 2);
+		height: $grid;
+		width: ($grid / 2);
 	}
 	&::-webkit-slider-thumb {
-		background: $button-light-bg;
+		background: $button-light-text-color;
 		border-radius: $br;
 		cursor: pointer;
-		height: $v;
-		width: ($h / 2);
-		margin-top: round(-$v * .35);
+		height: $grid;
+		width: ($grid / 2);
+		margin-top: round(-$grid * .35);
 		-webkit-appearance: none;
 	}
 	// TODO: Add -ms- styles

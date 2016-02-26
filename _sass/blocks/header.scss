@@ -1,16 +1,7 @@
-.header {
-	padding: 0 ($h / 2);
-}
-
-.header_bar {
-	margin: 0 (-$h / 2);
-	padding: round($v / 4) $h $v;
-}
-
 .header_nav {
 	position: absolute;
-	right: $h * 14;
-	top: $v;
+	right: $grid * 14;
+	top: $grid;
 	z-index: 1;
 
 	li {
@@ -24,6 +15,63 @@
 	a {
 		color: #fff;
 		display: block;
-		padding: ($v / 2) 1em;
+		padding: ($grid / 2) 1em;
+	}
+
+	.site.-fixed & {
+		right: ($grid / 2);
+		top: ($grid / 2);
+
+		a {
+			padding: 0 1em;
+		}
+	}
+}
+
+.header_nav-item {
+	&.-fixed {
+		display: none;
+
+		.site.-fixed & {
+			display: block;
+		}
+	}
+}
+
+.header_logo {
+	.site.-fixed & {
+		background-position: ($grid / 2);
+		background-size: auto $grid;
+		height: ($grid * 2);
+
+		a {
+			left: ($grid / 2);
+			height: ($grid * 1.5);
+			top: ($grid / 4);
+		}
+	}
+}
+
+.header_search-toggle {
+	background: 0;
+	border: 0;
+	color: #fff;
+	cursor: pointer;
+	padding: 0 1em;
+}
+
+.header_title {
+	.site.-fixed & {
+		font-size: inherit;
+		height: ($grid * 1.5);
+		left: 70px;
+		padding: 0 round($grid / 4);
+		top: 0;
+	}
+}
+
+.header_bar {
+	.site.-fixed & {
+		display: none;
 	}
 }

@@ -16,21 +16,25 @@
 @import 'mixins/respond-to';
 @import 'mixins/separator';
 
+@import 'common/bold';
 @import 'common/fa';
 @import 'common/hidden';
 @import 'common/sr-only';
 
+@import 'base';
+
 @import 'blocks/collections';
 @import 'blocks/content';
 @import 'blocks/header';
-@import 'blocks/fields';
 @import 'blocks/filter';
 @import 'blocks/footer';
 @import 'blocks/main';
-@import 'blocks/metadata';
 @import 'blocks/pagination';
 @import 'blocks/projects';
 @import 'blocks/result';
 @import 'blocks/results';
+@import 'blocks/search';
 @import 'blocks/site';
 @import 'blocks/viewer';
+
+@import 'util/global-modifiers';

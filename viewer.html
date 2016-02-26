@@ -1,14 +1,30 @@
 ---
-layout: default
+layout: fixed
 title: Viewer
 permalink: /viewer
 ---
 
 <main class="main" id="main">
-	<section class="main_content">
-		{% include viewer.html %}
+	<section class="viewer">
+		{% include viewer-header.html %}
+		<div class="viewer_main">
+			<div class="viewer_panel -scan">
+				{% include viewer-scan.html %}
+			</div>
+			<div class="viewer_panel -transcript -hidden">
+				{% include viewer-transcript.html %}
+			</div>
+			<div class="viewer_panel -toc -hidden">
+				{% include viewer-toc.html %}
+			</div>
+			<div class="viewer_panel -metadata">
+				{% include viewer-metadata.html %}
+			</div>
+		</div>
+		{% include viewer-footer.html %}
 	</section>
-	<aside class="main_aside">
-		{% include metadata.html %}
-	</aside>
 </main>
+
+<script src="{{ site.baseurl }}/assets/javascipt/jquery.panzoom.min.js"></script>
+<script src="{{ site.baseurl }}/assets/javascipt/jquery.mousewheel.min.js"></script>
+<script src="{{ site.baseurl }}/assets/javascipt/viewer.js"></script>

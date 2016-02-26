@@ -1,23 +1,134 @@
+// TODO: Split in separate files (one for every viewer section)
+
+.viewer {
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.viewer_covers {
+	display: flex;
+	padding: ($grid / 4);
+	overflow-x: scroll;
+}
+
+.viewer_cover-link {
+	flex: 0 0 auto;
+	height: $grid * 3;
+	margin-right: ($grid / 4);
+	padding: 0 !important;
+	position: relative;
+
+	img {
+		height: 100%;
+		width: auto;
+	}
+}
+
+.viewer_cover-page-number {
+	background: rgba(#000, .4);
+	bottom: 0;
+	border-radius: .5em 0 0;
+	color: #fff;
+	display: block;
+	font-size: $font-size-small;
+	font-weight: bold;
+	line-height: 1;
+	padding: ($grid / 4);
+	position: absolute;
+	right: 0;
+}
+
+.viewer_header {
+	@include separator(1, 0);
+	background: $header-bg;
+	flex: 0 0 ($grid * 2);
+	display: flex;
+	flex-wrap: wrap;
+	padding: ($grid / 4 - $border-width)  0 0 ($grid / 4);
+}
+
+.viewer_image {
+	img {
+		float: left;
+	}
+
+	&.-double img {
+		display: block;
+		height: 50%;
+		width: 50%;
+	}
+}
+
+.viewer_main {
+	display: flex;
+	flex: 1;
+	overflow: hidden;
+}
+
+.viewer_footer {
+	background: #000;
+}
+
 .viewer_controls {
 	display: flex;
 	flex-wrap: wrap;
+	z-index: 1;
+
+	p + p {
+		margin-left: 1em;
+	}
+
+	&.-overlay {
+		left: 0;
+		margin: ($grid / 2);
+		position: absolute;
+		right: 0;
+	}
 
 	[type=range] {
 		@include range-slider
 	}
 }
 
-.viewer_control {
-	background: $button-bg;
+.viewer_control.viewer_control {
+	background: $button-light-bg;
+	border: 0 !important;
+	color: $button-light-text-color;
 	border-radius: 0;
 	float: left;
-	height: $v * 1.5 !important;
-	padding: round($v / 4) !important;
-	min-width: $h * 1.5;
+	height: $grid * 1.5 !important;
+	padding: round($grid / 4) !important;
+	min-width: $grid * 1.5;
+	text-shadow: 0 1px rgba(#fff, .9);
 	width: auto !important;
 
-	& + & {
+	@include hover {
+		background: $button-light-hover-bg !important;
+		color: $button-light-hover-text-color;
+	}
+
+	&.-active {
+		background: $button-bg;
+		color: $button-text-color;
+		text-shadow: 0 -1px 0 rgba(#000, .5);
+
+		@include hover {
+			background: $button-hover-bg !important;
+		}
+	}
+
+	& + &,
+	label + & {
 		@include separator(0, 0, 0, 1);
+	}
+
+	&[type=text] {
+		color: $text-color !important;
 	}
 
 	&:first-child {
@@ -31,8 +142,37 @@
 	}
 }
 
+.viewer_dl {
+	dt, dd {
+		float: none;
+		padding: 0;
+		width: auto;
+	}
+
+	dd + dt {
+		margin-top: ($grid / 2);
+	}
+}
+
 .viewer_group {
-	margin: 0 ($h / 2) ($v / 2) 0;
+	@include clearfix;
+	box-shadow: $drop-shadow;
+	margin: 0 ($grid / 4) ($grid / 4) 0;
+}
+
+.viewer_metadata {
+	overflow-y: auto;
+	padding: ($grid / 2);
+
+	dt {
+		float: none;
+		width: auto;
+	}
+
+	dd {
+		margin-bottom: 1em;
+		width: auto;
+	}
 }
 
 .viewer_overlay {
@@ -40,14 +180,72 @@
 	top: 0;
 }
 
+.viewer_panel {
+	border-left: $border-width solid $border-color;
+	display: flex;
+	position: relative;
+	transition: width .2s;
+	width: 20em;
+
+	&:first-child {
+		border: 0;
+	}
+
+	&.-hidden {
+		border: 0;
+		overflow: hidden;
+		width: 0 !important;
+	}
+
+	&.-scan {
+		flex: 3;
+	}
+
+	&.-transcript {
+		white-space: nowrap; // TODO
+		width: 40em;
+	}
+}
+
 .viewer_scan {
 	background: $text-color;
-	border-radius: 0 $br $br 0;
-	margin-left: (-$h);
-	overflow: hidden;
-	position: relative;
+	flex: 1;
+}
 
-	img {
-		display: block;
+.viewer_switcher {
+	p {
+		display: inline-block;
+		margin: ($grid / 4) .5em 0;
 	}
+}
+
+.viewer_title {
+	flex: 1;
+	margin: ($grid / 4) !important;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.viewer_toc {
+	flex: 1;
+	overflow-y: auto;
+	padding: ($grid / 2);
+
+	li:before {
+		content: none !important;
+	}
+
+	ul {
+		margin-left: 0;
+
+		ul {
+			margin-left: $grid;
+		}
+	}
+}
+
+.viewer_transcript {
+	overflow-y: auto;
+	padding: ($grid / 2);
 }

@@ -1,4 +1,4 @@
-<header class="header" data-role="header">
+<header class="header {{ include.class }}" data-role="header">
 	<button class="header_toggle-nav" title="Navigation">Menü</button>
 	<div class="header_logo" role="banner">
 		<a href="">
@@ -9,11 +9,17 @@
 	<ul class="header_nav">
 		{% for my_page in site.pages %}
 			{% if my_page.title %}
-				<li>
+				<li class="header_nav-item">
 					<a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
 				</li>
 			{% endif %}
 		{% endfor %}
+		<li class="header_nav-item -fixed">
+			<button class="header_search-toggle js-search-toggle">
+				<i class="fa fa-search"></i>
+				<span class="sr-only">Suche</span>
+			</button>
+		</li>
 	</ul>
 	<div class="search">
 		<div class="search_popup -clip-right">
@@ -92,7 +98,7 @@
 			</ol>
 		</div>
 		<div class="header_language">
-			<a href="en/humanities-and-theology/egyptology/">English</a>
+			<a href="">English</a>
 		</div>
 	</div>
 </header>

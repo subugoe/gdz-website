@@ -3,8 +3,8 @@
 	background: $input-bg;
 	border: $input-border-width solid $input-border-color;
 	font: inherit;
-	margin: round(-$v / 8) 0;
-	padding: round($v / 8) .5em;
+	margin: round(-$grid / 8) 0;
+	padding: round($grid / 8) .5em;
 	vertical-align: middle;
 
 	&:focus {

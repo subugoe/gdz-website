@@ -1,42 +1,41 @@
 // Colors
-$alpha-color: #1a3771;
-$beta-color: #eee;
+$brand-color: #1a3771;
 
 $text-color: #444;
 $text-color-light: tint($text-color, 30);
 
-$border-color: #bbb;
+$border-color: #ccc;
 
-$header-bg: #eee;
+$header-bg: #ccc;
 
-$highlight-bg: tint($alpha-color, 20);
-$highlight-bg-light: tint($alpha-color, 90);
+$highlight-bg: tint($brand-color, 20);
+$highlight-bg-light: tint($brand-color, 90);
 $highlight-text-color: #fff;
 
-$link-color: $alpha-color;
-$link-hover-color: shade($alpha-color, 40);
+$link-color: $brand-color;
+$link-hover-color: shade($brand-color, 40);
 
 $input-bg: #fff;
 $input-border-color: #bbb;
-$input-focus-border-color: $alpha-color;
+$input-focus-border-color: $brand-color;
 
 $button-text-color: #fff;
-$button-bg: linear-gradient(to bottom, lighten($link-color, 10), $link-color);
-$button-hover-bg: linear-gradient(to bottom, shade($alpha-color, 10), shade($alpha-color, 30));
+$button-bg: linear-gradient(to bottom, tint($link-color, 10), shade($link-color, 10));
+$button-hover-bg: linear-gradient(to bottom, shade($brand-color, 10), shade($brand-color, 30));
 
 $button-light-text-color: $text-color;
-$button-light-bg: linear-gradient(to bottom, tint($beta-color, 10), shade($beta-color, 10));
-$button-light-hover-bg: linear-gradient(to bottom, tint($beta-color, 30), tint($beta-color, 10));
+$button-light-hover-text-color: shade($text-color, 20);
+$button-light-bg: linear-gradient(to bottom, tint(#e7e7e7, 10), shade(#e7e7e7, 10));
+$button-light-hover-bg: linear-gradient(to bottom, tint(#e7e7e7, 30), tint(#e7e7e7, 10));
 
 // Dimensions
-$h: 26px; // horizontal grid
-$v: 26px; // vertical grid
+$grid: 26px;
 
 $br: 3px; // border radius
 
 $font-size: 16px;
 $font-size-small: 13px;
-$line-height: $v;
+$line-height: $grid;
 
 $border-width: 1px;
 $input-border-width: 1px;

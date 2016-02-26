@@ -19,7 +19,7 @@
 	border-radius: $br;
 	display: block;
 	height: 240px;
-	margin: 0 ($v / 2) $h;
+	margin: 0 ($grid / 2) $grid;
 	width: 240px;
 
 	&:before {
@@ -45,11 +45,11 @@
 
 .collections_name {
 	background: rgba(#000, .75);
-	bottom: $v;
+	bottom: $grid;
 	display: inline-block;
 	font-family: urw_classicoregular;
 	left: 0;
-	padding: ($v / 4) ($h / 4);
+	padding: ($grid / 4);
 	position: absolute;
 	right: 0;
 	text-shadow: 0 0 1em #000, 0 1px 0 #000;

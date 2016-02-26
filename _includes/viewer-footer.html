@@ -1,0 +1,17 @@
+<footer class="viewer_footer">
+	<div class="viewer_covers js-horizontal-scroll">
+		{% for i in (1..50) %}
+			{% assign string = i | downcase %}
+			{% assign strLength = string | size %}
+			{% assign padLength = 8 | minus: strLength %}
+			{% assign padded = i %}
+			{% for position in (1..padLength) %}
+				{% assign padded = padded | prepend: '0' %}
+			{% endfor %}
+			<a class="viewer_cover-link" href="">
+				<img src="{{site.baseurl}}/img/heyne-thumbs/{{padded}}.jpeg" alt="">
+				<span class="viewer_cover-page-number">{{i}}</span>
+			</a>
+		{% endfor %}
+	</div>
+</footer>

@@ -3,36 +3,16 @@
 	flex: 1;
 
 	h1 {
-		font-size: $v;
-		line-height: $v;
+		font-size: $grid;
+		line-height: $grid;
 	}
-}
 
-.content_header {
-	background: $header-bg;
-	box-shadow: 0 1px 0 rgba(#fff, .2) inset, 0 -1px 0 rgba(#000, .1) inset;
-	margin: 0 auto;
-	padding: ($v / 2) ($h / 4);
-	text-align: center;
-
-	&.-small {
+	// TODO: Replace margin/padding hack with something decent
+	.site.-fixed & {
 		display: flex;
-		margin: 0;
-		max-width: none;
-		padding: ($v / 2) 0;
-		text-align: left;
-
-		@include respond-to(tiny) {
-			display: block;
-		}
+		flex-direction: column;
+		margin-top: (-$grid * 2);
+		max-height: 100%;
+		padding-top: ($grid * 2);
 	}
-}
-
-.content_logo {
-	flex: 1;
-	margin: 0 .5em;
-}
-
-.content_search {
-	flex: 99;
 }

@@ -7,10 +7,10 @@
 }
 
 .projects_block {
-	margin-bottom: $v;
+	margin-bottom: $grid;
 	flex: 1;
 
 	& + & {
-		margin-left: $h;
+		margin-left: $grid;
 	}
 }

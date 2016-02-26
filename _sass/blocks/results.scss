@@ -1,16 +1,16 @@
 .results_count {
 	font-size: $font-size-small;
-	margin: $v / 2 0;
+	margin: $grid / 2 0;
 	text-align: right;
 }
 
 .results_header {
-	margin-bottom: $v;
+	margin-bottom: $grid;
 	text-align: center;
 }
 
 .results_footer {
-	margin-top: $v;
+	margin-top: $grid;
 	text-align: center;
 }
 

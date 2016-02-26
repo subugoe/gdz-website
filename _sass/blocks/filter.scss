@@ -1,6 +1,6 @@
 .filter {
 	& + & {
-		margin-top: $v;
+		margin-top: $grid;
 	}
 }
 
@@ -23,7 +23,7 @@
 		border-radius: $br;
 		cursor: pointer;
 		font-weight: bold;
-		padding-left: $h * 1.25;
+		padding-left: $grid * 1.25;
 		position: relative;
 
 		&:before {
@@ -33,10 +33,10 @@
 			color: #fff;
 			content: '\00d7' !important;
 			height: 100%;
-			margin: 0 0 0 (-$h * 1.25);
+			margin: 0 0 0 (-$grid * 1.25);
 			text-align: center;
 			text-shadow: 0 -1px 0 rgba(#000, .2);
-			width: $h;
+			width: $grid;
 		}
 	}
 }

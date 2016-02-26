@@ -7,8 +7,8 @@
 
 	& + & {
 		border-top: $border;
-		margin-top: $v / 2 - $border-width;
-		padding-top: $h / 2;
+		margin-top: $grid / 2 - $border-width;
+		padding-top: $grid / 2;
 	}
 }
 
@@ -18,7 +18,7 @@
 }
 
 .result_content {
-	margin-left: $h;
+	margin-left: $grid;
 }
 
 .result_highlight {
@@ -26,9 +26,9 @@
 }
 
 .result_image {
-	height: $v * 4;
-	min-width: $h * 3;
-	width: $h * 3;
+	height: $grid * 4;
+	min-width: $grid * 3;
+	width: $grid * 3;
 
 	img {
 		box-shadow: $border-shadow;
