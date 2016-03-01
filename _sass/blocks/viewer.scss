@@ -102,7 +102,7 @@
 	width: auto !important;
 
 	@include hover {
-		background: $button-light-hover-bg !important;
+		background: white $button-light-hover-bg !important;
 		color: $button-light-hover-text-color;
 	}
 
