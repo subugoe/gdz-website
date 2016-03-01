@@ -53,15 +53,9 @@
 }
 
 .viewer_image {
-	img {
-		float: left;
-	}
-
-	&.-double img {
-		display: block;
-		height: 50%;
-		width: 50%;
-	}
+	font-size: 0;
+	position: absolute;
+	white-space: nowrap;
 }
 
 .viewer_main {
