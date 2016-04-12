@@ -1,3 +1,9 @@
+.header {
+	.site.-fixed & {
+		padding-bottom: 0;
+	}
+}
+
 .header_nav {
 	position: absolute;
 	right: $grid * 14;
@@ -63,10 +69,18 @@
 .header_title {
 	.site.-fixed & {
 		font-size: inherit;
-		height: ($grid * 1.5);
-		left: 70px;
+		height: ($grid * 2);
+		left: 83px;
 		padding: 0 round($grid / 4);
 		top: 0;
+	}
+}
+
+.header_top {
+	max-width: none;
+
+	.site.-fixed & {
+		padding: 0;
 	}
 }
 

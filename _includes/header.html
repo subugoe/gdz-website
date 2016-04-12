@@ -1,84 +1,72 @@
 <header class="header {{ include.class }}" data-role="header">
-	<button class="header_toggle-nav" title="Navigation">Menü</button>
-	<div class="header_logo" role="banner">
-		<a href="">
-			<span class="sr-only">Niedersächsische Staats-und Universitätsbibliothek Göttingen</span>
-			<h1 class="header_title">{{ site.title }}</h1>
-		</a>
-	</div>
-	<ul class="header_nav">
-		{% for my_page in site.pages %}
-			{% if my_page.title %}
-				<li class="header_nav-item">
-					<a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-				</li>
-			{% endif %}
-		{% endfor %}
-		<li class="header_nav-item -fixed">
-			<button class="header_search-toggle js-search-toggle">
-				<i class="fa fa-search"></i>
-				<span class="sr-only">Suche</span>
-			</button>
-		</li>
-	</ul>
-	<div class="search">
-		<div class="search_popup -clip-right">
-			<ul class="search_navigation">
-				<li>
-					<a href="geisteswissenschaften-und-theologie/aegyptologie/#catalogue" class="search_tab -catalogue">Nationallizenzen</a>
-				</li>
-				<li>
-					<a href="geisteswissenschaften-und-theologie/aegyptologie/#website" class="search_tab -website">Website</a>
-				</li>
-			</ul>
+	<div class="header_top">
+		<button class="header_toggle-nav" title="Navigation">Menü</button>
+		<div class="header_logo" role="banner">
+			<a href="">
+				<span class="sr-only">Niedersächsische Staats-und Universitätsbibliothek Göttingen</span>
+				<h1 class="header_title">{{ site.title }}</h1>
+			</a>
 		</div>
-		<form method="get" class="search_form -catalogue -visible" action="/" role="search">
-			<input size="40" placeholder="{{ site.search_term }}" class="search_input" id="mytextbox" type="text" name="searchcat" />
-			<label for="mytextbox" class="sr-only">{{ site.search_term }}</label>
-			<button class="search_submit" type="submit" name="" value="">
-				<span class="sr-only">Suchen</span>
-			</button>
-		</form>
-		<form class="search_form -subjects" role="search">
-			<input size="40" placeholder="{{ site.search_term }}" class="search_input" id="q" type="text" name="searchcat" />
-			<label for="q" class="sr-only">{{ site.search_term }}</label>
-		</form>
-		<form action="/suche/" method="get" class="search_form -website" role="search">
-			<input size="40" placeholder="{{ site.search_term }}" class="search_input" id="solrtab" type="text" name="q" />
-			<label for="solrtab" class="sr-only">{{ site.search_term }}</label>
-			<button class="search_submit" type="submit" name="" value="">
-				<span class="sr-only">Suchen</span>
-			</button>
-		</form>
-		<div class="search_popup">
-			<div class="search_content -catalogue">
-				<p>Suche in</p>
-				<ul class="search_catalog-list">
-					<li class="search_item">
-						<input class="search_radio -new-window" id="radio0" type="checkbox" name="kataloge" value="https://opac.sub.uni-goettingen.de/DB=1/LNG=DU/CMD?ACT=SRCHA&amp;IKT=1016&amp;SRT=YOP&amp;TRM=" checked="checked" />
-						<label class="search_label" for="radio0">Volltexten</label>
+		<ul class="header_nav">
+			{% for my_page in site.pages %}
+				{% if my_page.title %}
+					<li class="header_nav-item">
+						<a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
 					</li>
-					<li class="search_item">
-						<input class="search_radio -new-window" id="radio1" type="checkbox" name="kataloge" value="https://opac.sub.uni-goettingen.de/DB=1/LNG=DU/CMD?ACT=SRCHA&amp;IKT=1016&amp;SRT=YOP&amp;TRM=" checked="checked" />
-						<label class="search_label" for="radio1">Metadaten</label>
-					</li>
+				{% endif %}
+			{% endfor %}
+			<li class="header_nav-item -fixed">
+				<button class="header_search-toggle js-search-toggle">
+					<i class="fa fa-search"></i>
+					<span class="sr-only">Suche</span>
+				</button>
+			</li>
+		</ul>
+		<div class="search">
+			<div class="search_popup -clip-right -visible">
+				<ul class="search_navigation">
+					<li class="-active"><a href="#catalog" class="search_tab -catalog">GDZ</a></li>
+					<li><a href="#website" class="search_tab -website">Website</a></li>
 				</ul>
-				<button class="search_close" title="Schließen">
-					<span class="sr-only">Schließen</span>
-				</button>
 			</div>
-			<div class="search_content -subjects">
-				<button class="search_close" title="Schließen">
-					<span class="sr-only">Schließen</span>
-				</button>
-			</div>
-			<div class="search_content -website">
-				<div class="search_tab-content">
+
+			<form class="search_form -catalog -visible" method="get" action="/" role="search">
+				<input size="40" placeholder="Kataloge, Fächer, Website" class="search_input" id="mytextbox" type="text" name="searchcat">
+				<label for="mytextbox" class="sr-only">Kataloge, Fächer, Website</label>
+				<button type="submit" class="search_submit"><span class="sr-only">Suchen</span></button>
+				<div class="search_popup">
+					<div class="search_content -catalog -visible">
+						<p>Suche in</p>
+						<ul class="search_catalog-list">
+							<li class="search_item">
+								<input class="search_radio -new-window" id="radio0" type="checkbox" name="kataloge" value="https://opac.sub.uni-goettingen.de/DB=1/LNG=DU/CMD?ACT=SRCHA&amp;IKT=1016&amp;SRT=YOP&amp;TRM=" checked="checked" />
+								<label class="search_label" for="radio0">Volltexten</label>
+							</li>
+							<li class="search_item">
+								<input class="search_radio -new-window" id="radio1" type="checkbox" name="kataloge" value="https://opac.sub.uni-goettingen.de/DB=1/LNG=DU/CMD?ACT=SRCHA&amp;IKT=1016&amp;SRT=YOP&amp;TRM=" checked="checked" />
+								<label class="search_label" for="radio1">Metadaten</label>
+							</li>
+						</ul>
+						<button class="search_close" title="Schließen">
+							<span class="sr-only">Schließen</span>
+						</button>
+					</div>
 				</div>
-				<button class="search_close" title="Schließen">
-					<span class="sr-only">Schließen</span>
-				</button>
-			</div>
+			</form>
+
+			<form class="search_form -website" method="get" action="/suche/" role="search">
+				<input size="40" placeholder="Kataloge, Fächer, Website" class="search_input" id="solrtab" type="text" name="q">
+				<label for="solrtab" class="sr-only">Kataloge, Fächer, Website</label>
+				<button type="submit" class="search_submit"><span class="sr-only">Suchen</span></button>
+				<div class="search_popup">
+					<div class="search_content -website" style="min-height: 52px;">
+						<div class="search_tab-content"></div>
+						<button class="search_close" title="Schließen">
+							<span class="sr-only">Schließen</span>
+						</button>
+					</div>
+				</div>
+			</form>
 		</div>
 	</div>
 	<div class="header_bar">
